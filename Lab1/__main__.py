@@ -36,7 +36,7 @@ def main():
     url = "https://yandex.ru/pogoda/ru/omsk/month/february"
     response = requests.get(url)
     soup = bs(response.text, 'html.parser')
-    with open("output.txt", "w", encoding="utf-8") as file:
+    with open("Lab1/output.txt", "w", encoding="utf-8") as file:
         file.write("Дата : Температура : Состояние погоды : Давление : Влажность : Ветер\n")
         for day in soup.find_all("li", class_="AppMonthCalendar_calendar__item__E7b8r"):
             #Дата
