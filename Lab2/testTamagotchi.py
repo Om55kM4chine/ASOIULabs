@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from Lab2.tamagotchi import Tamagotchi
+from tamagotchi import Tamagotchi
 
 
 class TestTamagotchi(unittest.TestCase):
