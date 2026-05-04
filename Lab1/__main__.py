@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup as bs
-import requests
+import requests, os
 
 weatherTypes = {
     0: "Малый дождь с прояснениями",
@@ -36,7 +36,7 @@ def main():
     url = "https://yandex.ru/pogoda/ru/omsk/month/february"
     response = requests.get(url)
     soup = bs(response.text, 'html.parser')
-    with open("Lab1/output.txt", "w", encoding="utf-8") as file:
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "output.txt"), "w", encoding="utf-8") as file:
         file.write("Дата : Температура : Состояние погоды : Давление : Влажность : Ветер\n")
         for day in soup.find_all("li", class_="AppMonthCalendar_calendar__item__E7b8r"):
             #Дата
