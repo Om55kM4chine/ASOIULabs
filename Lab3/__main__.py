@@ -1,4 +1,3 @@
-#TODO: создание web-приложения для блога с помощью Flask. Написанный текст должен сохраняться и выводиться по убыванию даты.
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
 
